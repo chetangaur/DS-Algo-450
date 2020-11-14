@@ -1,5 +1,5 @@
 #arr = [1000, 11,233,534,4300,54]
-"""mini=arr[0]    # method 1
+"""mini=arr[0]    # method 1 (In this method first element is consider as minimum and maximum element and then we compare this with all remaning elements form index 1 to n and modify value of mini and maxi.)
 maxi=arr[0]
 l=len(arr)
 for i in range(l):
@@ -9,7 +9,7 @@ for i in range(l):
         maxi=arr[i]
 print(mini)
 print(maxi)"""
-# method 2
+# method 2   (In this method if size of array is even then first 2 elements of array are initialized as mini and maxi by comparing both and if size is odd then first element is both mini and maxi and then we have to compare all others by makeing pairs)
 def min_max(arr):
 
     l=len(arr)
