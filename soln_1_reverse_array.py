@@ -3,7 +3,7 @@ arr=arr[::-1]  # method 1
 # arr.reverse()  method 2
 """l=len(arr)
 for i in range(l):
-    arr[i]=arr[l-1-i]""" # method 3
+    arr[i]=arr[l-1-i]""" # method 3         by recursion
 """def reverse_arr(A,start,end):
     if start>=end:
         return A
@@ -12,7 +12,7 @@ for i in range(l):
 
 
 arr = [1, 2, 3, 4, 5]
-reverse_arr(arr,0,len(arr)-1)""" # method 4
+reverse_arr(arr,0,len(arr)-1)""" # method 4   by iteration
 """start=0
 end=len(arr)-1
 while(start<end):
