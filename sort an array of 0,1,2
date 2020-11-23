@@ -1,0 +1,24 @@
+def sort012( a, arr_size):
+    low=0
+    mid=0
+    high=arr_size-1
+    while(mid<=high):
+        if(a[mid]==0):
+            a[low],a[mid]=a[mid],a[low]
+            low=low+1
+            mid=mid+1
+        elif(a[mid]==1):
+            mid=mid+1
+        else:
+            a[mid],a[high]=a[high],a[mid]
+            high=high-1
+    
+    return a 
+      
+# Function to print array 
+def printArray( a): 
+    for k in a: 
+        print(k)
+        
+        
+# another approch can be possible but it will take 2 traversal of array in which once we traverse to array and count no of 0,1,2 and in another traversal we initialize 0 then 1 then 2.
