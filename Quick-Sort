@@ -1,0 +1,29 @@
+def partition(arr,low,high):
+    pivot=arr[high]                              # assume pivot as last element of array
+    
+    i=low-1
+    for j in range(low,high):                   # traverse to the array and if element is less than pivot then swap it with the pivot and at last step swap the i+1th ele with pivot
+        if(arr[j]<pivot):                       
+            i=i+1 
+            arr[i],arr[j]=arr[j],arr[i]
+    arr[i+1],arr[high]=arr[high],arr[i+1]
+    return i+1
+    
+
+def quick_sort(arr,low,high):                 
+    if low<high:
+        pi=partition(arr,low,high)                      # the partition function will return the actual position(the position where it has to be in sorted array) of pivot element
+        quick_sort(arr,low,pi-1)                        # Using recurssion, size is now ((size/2)-1) from low to pivot-1 and from pivot+1 to high
+        quick_sort(arr,pi+1,high)
+    
+
+
+
+
+arr=[10, 7, 8, 9, 1, 5]
+# sort this array using quick sort
+low=0 
+high=len(arr)-1
+quick_sort(arr,low,high)
+for ele in arr:            # To print array
+    print(ele)
