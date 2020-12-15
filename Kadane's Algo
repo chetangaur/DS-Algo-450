@@ -1,0 +1,25 @@
+Find the contiguous sub-array with maximum sum.
+
+ def maxSubArraySum(a,size):
+    ##Your code here
+    """new_arr=[]                        # Try 1st :- but only valid for single iteration
+    addition=0
+    for i in range(len(a)):
+        addition=addition+a[i]
+        new_arr.append(addition)
+    return(max(new_arr))"""
+    """max_no=-1
+    for i in range(size):                   # Time comp- O(n^2)
+        addition=0
+        for j in range(i,size):
+            addition+=a[j]
+            if addition>max_no:
+                max_no=addition
+    return max_no"""
+    Max=0                                     # Time comp - O(n)        Kadane's algo
+    Max_till_now=0
+    for i in range(size):
+        Max_till_now=max(a[i],a[i]+Max_till_now)
+        if(Max_till_now>Max):
+            Max=Max_till_now
+    return Max
